@@ -10,4 +10,23 @@ window.onpageshow = () => {
                 }, { once: true });
         })
     })
+
+    //Animate items on right of content to slide left when they come into viewport
+    const inViewport = (entries, observer) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add("move_right");
+            }
+            console.log(entry.isIntersecting)
+        });
+    };
+    
+    const obsOptions = {};
+    const obs = new IntersectionObserver(inViewport, obsOptions);  
+    const rightElements = document.querySelectorAll('.right');
+    rightElements.forEach(elem => {
+        obs.observe(elem);
+        console.log(elem);
+    });
 }
+

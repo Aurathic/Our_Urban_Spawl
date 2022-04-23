@@ -34,6 +34,9 @@ body {
   float: right;
   margin-right: 5%;
   max-width: 100%;
+  /* Start off screen */
+  transform: translateX(90%);
+  transition: all 1s ease;
 }
 
 img {
@@ -56,6 +59,8 @@ img {
   transform: translateX(calc(100vw));
 }
 
-.move_up {
-  
+.move_right {
+  transform: translateX(0%);
 }
+
+
